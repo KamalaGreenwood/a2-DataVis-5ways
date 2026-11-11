@@ -1,16 +1,15 @@
 Assignment 2 - Data Visualization, 5 Ways  
 ===
 
-Now that you have successfully made a "visualization" of shapes and lines using d3, your next assignment is to successfully make an *actual visualization*... 5 times. 
+Python with Matplotlib:
+![matplotLib](img/pythonPlt.png)
+This was fairly easy for a library, although knowing pyhton or having experience definitely helps. I really struggled to get legends to work. Having two seperate legends required a handler. Also I fought with placment of the legends for a long time. I wanted them to be on the right and outside of the graph which seemed doable with "outer upper right" but there were two placement methods and the one that worked with my code did not allow for "outer". I also had to offset the second legend so they were readable. 
+Shout out to Benjamin Greenwood for his help with coding
 
-The goal of this project is to gain experience with as many data visualization libraries, languages, and tools as possible.
+Tableau:
+![Tableu](img/Tabbleu_penguin.png)
+This was extremely easy. In total took me maybe 15 minutes. At first I found tableau public desktop to be a bit confulsing, but quickly learned that it worked by dragging data attributes onto graph attributes. For example dragging Species onto the color icon to get points to be colored by species. This was amazing and I would love to use it again in the future. Intrestingly I notices that there were more "bill_length_mm" than in the example and I do not know why exactly, but I think the overal outcome is the same. 
 
-I have provided a small dataset about penguins, `penglings.csv`.
-Each row contains a penguin observation and several variables about it, including bill length, flipper length, and more.
-
-Your goal is to use 5 different tools to make the following chart:
-
-![](img/ggplot2.png)
 
 These features should be preserved as much as possible in your replication:
 
@@ -26,52 +25,23 @@ Other features are not required. This includes:
 - The background grid.
 - The legends.
 
-Note that some software packages will make it **impossible** to perfectly preserve the above requirements. 
-Be sure to note where these deviate as you reflect on what a tool is good for.
-
-Improvements are also welcome as part of Technical and Design achievements.
-
-Libraries, Tools, Languages
 ---
 
-You are required to use 5 different tools or libraries.
-Of the 5 tools, you must use at least 3 libraries (libraries require code of some kind).
-This could be `Python, R, Javascript`, or `Java, Javascript, Matlab` or any other combination.
-Dedicated tools (i.e. Excel) do not count towards the language requirement.
-
-Otherwise, you should seek tools and libraries to fill out your 5.
-
-Below are a few ideas. Do not limit yourself to this list!
-There are new tools coming out every year and we may not have an exhaustive list of the latest and greatest.
-
-Some may be difficult choices, like Matlab or SPSS, which require large installations, licenses, and occasionally difficult UIs.
-
-I have marked a few that are strongly suggested.
-
 - R + ggplot2 `<- definitely worth trying`
-- Excel
 - d3 `<- since the rest of the class uses this, we're requiring it`
 - Altair `<- hugely popular python library. highly recommended `
 - three.js `<- well, it's a 3d library. not really recommended, but could be interesting and fun`
 - p5js `<- good for playing around. not really a chart lib`
 - Tableau
-- PowerBI
 - Vega-lite `<- very interesting formal visualization model; might be the future of the field`
 - Flourish `<- popular in recent years`
 - DataWrapper `<- popular in recent years`
-- GNUplot `<- the former CS department head uses this all the time :)`
-- SAS/SPSS/Matlab
-
-You may write everything from scratch, or start with demo programs from books or the web. 
-If you do start with code that you found, please identify the source of the code in your README and, most importantly, make non-trivial changes to the code to make it your own so you really learn what you're doing. 
 
 Tips
 ---
 
 - If you're using d3, key to this assignment is knowing how to load data.
 You will likely use the [`d3.json` or `d3.csv` functions](https://d3js.org/d3-dsv) to load the data you found.
-
-**Beware that these functions are *asynchronous*, meaning it's possible to "build" an empty visualization before the data actually loads. Figuring out how to do this properly can be a major hiccup if you haven't used async functions before. If this means you, start part of this project early so you don't end up in a rush!**
 
 - `penglings.csv` has a few rows with `NA` values (two have no measurements at all). Filter them out before you plot (in d3, converting `"NA"` to a number gives `NaN`, which breaks scales and circle positions).
 

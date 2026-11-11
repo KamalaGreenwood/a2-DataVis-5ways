@@ -4,13 +4,13 @@ const canvas = d3.select("#main").append("svg").attr("height",1000).attr("width"
 canvas.append('rect')
     .attr("height",500)
     .attr("width",900)
-    .attr("fill", '#eeeaea');
+    .attr("fill", '#f5f5f5');
 
     //this is going to be the gray smaller bg
 canvas.append('rect')
     .attr("height",435)
     .attr("width",700)
-    .attr("fill", '#989696')
+    .attr("fill", '#dedede')
     .attr("x", 75)
     .attr("y", 10);
 
