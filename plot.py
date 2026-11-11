@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("penglings.csv")
 penguin_size = data.bill_length_mm
 data = data.drop(columns = ["island", "sex", "year", "bill_depth_mm"])
+data = data.dropna()
 
 fig, ax = plt.subplots(figsize=(8,5))
 
@@ -18,7 +19,7 @@ for species in colorMap:
     ax.scatter(
         x=subset["flipper_length_mm"],
         y=subset["body_mass_g"],
-        s=(subset["bill_length_mm"]*2.5),
+        s=(1.1**(subset["bill_length_mm"])),
         c=colorMap[species],
         label=species
     )
@@ -32,16 +33,16 @@ ax.grid(True)
 species_legend = plt.legend(title="Species", loc="upper left")
 ax.add_artist(species_legend)
 ##legend two
-size_values = [40, 50]
+size_values = [32.10, 40, 50, 59.60]
 size_handles = [
     plt.scatter([],[],s=v, color="black")
     for v in size_values]
 size_lables= [f"{v} mm" for v in size_values]
 ax.legend(
-    handles=size_handles,
+    handles=np.array(size_handles),
     labels=size_lables,
     title="Bill Length",
     loc="upper left",
     bbox_to_anchor=(0.25, 1)
 )
-plt.savefig("pythonPlt.png",dpi=200)
+plt.savefig("img/pythonPlt.png",dpi=200)
