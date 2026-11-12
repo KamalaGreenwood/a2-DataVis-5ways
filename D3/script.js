@@ -3,41 +3,68 @@ var margin = {top: 10, right: 130, bottom: 60, left: 60},
     width = 870 - margin.left - margin.right,
     height = 560 - margin.top - margin.bottom;
 
-const canvas = d3.select("#main")
+const svg = d3.select("#main")
         .append("svg").attr("height",(height + margin.top + margin.bottom))
                         .attr("width",(width + margin.left + margin.right))
+        .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //this is the background canvas
-canvas.append('rect')
+svg.append('rect')
     .attr("height", (height + margin.top + margin.bottom))
     .attr("width", (width + margin.left + margin.right))
     .attr("fill", '#f5f5f5');
 
-    //this is going to be the gray smaller bg
-canvas.append('rect')
+//this is going to be the gray smaller bg
+svg.append('rect')
     .attr("height", height)
     .attr("width", width)
     .attr("fill", '#dedede')
     .attr("x", margin.left)
     .attr("y", margin.top);
 
+
 //here I am loading the data
 d3.csv("../penglings.csv", function(data){
     console.log(data); //checking data exists :)
+    const cleanData = data
 
-    //add x-axis
-    var x = d3.scaleLinear()
-    .domain([170,235])
-    .range([0,width])
+// Add X axis
+  var x = d3.scaleLinear()
+    .domain([170, 235])
+    .range([ 0, width]);
+  svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + (height + 10) + ")")
+    .call(d3.axisBottom(x));
 
-    canvas.append()
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x).ticks(5))
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain([1500, 7000])
+    .range([ height + margin.top, margin.top]);
+  svg.append("g")
+    .attr("transform", "translate(" + margin.left + ",0)")
+    .call(d3.axisLeft(y));
 
-    // Add X axis label:
-    canvas.append("text")
-      .attr("text-anchor", "end")
-      .attr("x", margin.left + width/2 + 50)
-      .attr("y", height + margin.top + margin.bottom/2)
-      .text("Flipper Length (mm)"); 
+  // Add a scale for bubble size
+  var z = d3.scaleLinear()
+    .domain([1, 100])
+    .range([ 1, 100]);
+
+  // Add a scale for bubble color
+  var myColor = d3.scaleOrdinal()
+    .domain(["Adelie", "Chinstrap", "Gentoo"])
+    .range(["#dbb20c", "#871dea", "#238fe2"]);
+
+  // Add dots
+  svg.append('g')
+    .selectAll("dot")
+    .data(cleanData)
+    .enter()
+    .append("circle")
+      .attr("cx", function (d) { return x(d.flipper_length_mm); } )
+      .attr("cy", function (d) { return y(d.body_mass_g); } )
+      .attr("r", function (d) { return z(d.bill_length_mm); } )
+      .style("fill", function (d) { return myColor(d.species); } )
+      .style("opacity", "0.8")
+      .attr("stroke", "white")
+      .style("stroke-width", "2px")
 });
