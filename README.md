@@ -8,7 +8,10 @@ Python with Matplotlib:
 ![matplotLib](img/pythonPlt.png)
 This was fairly easy for a library, although knowing pyhton or having experience definitely helps. I really struggled to get legends to work. Having two seperate legends required a handler. Also I fought with placment of the legends for a long time. I wanted them to be on the right and outside of the graph which seemed doable with "outer upper right" but there were two placement methods and the one that worked with my code did not allow for "outer". I also had to offset the second legend so they were readable. 
 I set the size of the dots to be 1.1^(bill_length_mm) which made the change in size more distinct wile still being readable. For some reason this made the legends a bit weird where the Species legend ended up having diffent sized dots. I don't know what exactly the size is based on but I would assume it was the average size per species. Annoyingly the size legend didn't actually show that much of a difference. This is why I used exponential in the data drawing portion, but I was unable to appy that change to the legend. I think this is the most accurate except for my legend issues.
-Shout out to Benjamin Greenwood for his help with coding
+Credit to
+-Benjamin Greenwood
+-VS Code Copilot
+-Griffon Munhall
 
 Tableau:
 ![Tableau_2ndVersion](img/Tableau_update.png)
@@ -18,8 +21,9 @@ Version 2: I changed the colors and messed around with size to make the scaling 
 D3 and JS:
 
 Fourish:
-![Flourish](img/Flourish_penguin.png)
-This was simple like Tableau, which is expected as it is a tool and not a language. But I had many annoyances. Maybe using their built in AI could have helped me solve some of these but I am just going to list my user experience issues without the use of AI. I liked how you could load in data and it showed it as a table and also ass you assigned attributed the graph thumbnail changed in real time accordingly. On the other hand I struggled to change the colors from the presets to something more specific. I also couldn't make the size use a fancier function like [Bill_length_mm]^1.2 or *2.5, as it seemed to only allow an attribute to be assigned to a column. There wasn't an easy way to make a new column with an equation like excel where =D3*2.5 or something like that would automatically change the value based on another column's value.
+![Flourish](img/Flourish_penguin2.png)
+This was simple like Tableau, which is expected as it is a tool and not a language. But I had many annoyances. Maybe using their built in AI could have helped me solve some of these but I am just going to list my user experience issues without the use of AI. I liked how you could load in data and it showed it as a table and also ass you assigned attributed the graph thumbnail changed in real time accordingly. On the other hand I struggled to change the colors from the presets to something more specific. I also couldn't make the size use a fancier function like [Bill_length_mm]^1.2 or *2.5, as it seemed to only allow an attribute to be assigned to a column. There wasn't an easy way to make a new column with an equation like excel where =D3*2.5 or something like that would automatically change the value based on another column's value. I also wasn't able to figure out how to add a second legend with size which is annoying.
+Version 2: I was able to figure out how to modify the colors to be more accurate.
 
 These features should be preserved as much as possible in your replication:
 
