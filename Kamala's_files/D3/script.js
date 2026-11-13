@@ -22,11 +22,12 @@ svg.append('rect')
     .attr("x", margin.left)
     .attr("y", margin.top);
 
-
 //here I am loading the data
-d3.csv("../penglings.csv", function(data){
+d3.csv("data.csv", d => {
+  if (!d.year || !d.value) return null;  // skip rows with empty fields
+  return { year: +d.year, value: +d.value };
+}).then(data => {
     console.log(data); //checking data exists :)
-    const cleanData = data
 
 // Add X axis
   var x = d3.scaleLinear()
@@ -47,7 +48,7 @@ d3.csv("../penglings.csv", function(data){
   // Add a scale for bubble size
   var z = d3.scaleLinear()
     .domain([1, 100])
-    .range([ 1, 100]);
+    .range([ 1, 200]);
 
   // Add a scale for bubble color
   var myColor = d3.scaleOrdinal()
@@ -57,7 +58,7 @@ d3.csv("../penglings.csv", function(data){
   // Add dots
   svg.append('g')
     .selectAll("dot")
-    .data(cleanData)
+    .data(data)
     .enter()
     .append("circle")
       .attr("cx", function (d) { return x(d.flipper_length_mm); } )
@@ -65,6 +66,6 @@ d3.csv("../penglings.csv", function(data){
       .attr("r", function (d) { return z(d.bill_length_mm); } )
       .style("fill", function (d) { return myColor(d.species); } )
       .style("opacity", "0.8")
-      .attr("stroke", "white")
+      .attr("stroke", "black")
       .style("stroke-width", "2px")
 });
