@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("penglings.csv")
+data = pd.read_csv("../penglings.csv")
 penguin_size = data.bill_length_mm
 data = data.drop(columns = ["island", "sex", "year", "bill_depth_mm"])
 data = data.dropna()
@@ -45,4 +45,4 @@ ax.legend(
     loc="upper left",
     bbox_to_anchor=(0.25, 1)
 )
-plt.savefig("img/pythonPlt.png",dpi=200)
+plt.savefig("../img/pythonPlt.png",dpi=200)
