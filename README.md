@@ -19,9 +19,13 @@ This was extremely easy. In total took me maybe 15 minutes. At first I found tab
 Version 2: I changed the colors and messed around with size to make the scaling more noticable. I had used "Edit in Shef" then 2*[Bill_length_mm] but then the legend was only showing the multiplied version, so I undid that. 
 
 # D3 and JS:<br>
-This was tourturous and evil. I struggled with this so badly. I heavily relied on using code from the D3 gallery which I edited to fit my needs. I like the freedom D3 gives but I have very little JS knowledge, and dislike how things wouldn't show up when I expected them to.<br>
+![D# + J# version screenshot](img/d3plt.png)<br>
+This was tourturous and evil. I struggled with this so badly. I heavily relied on using code from the D3 gallery which I edited to fit my needs. I like the freedom D3 gives but I have very little JS knowledge, and dislike how things wouldn't show up when I expected them to. This took by far the longest, but also gives the most freedom. I do not like using copilot but I understand how convenient it can be. I am trying to read all code and understand it before using it. I felt like I had to use it just to be able to finish, even though it feels awful to say that<br>
 Credit to:<br>
-- https://d3-graph-gallery.com/graph/bubble_color.html <br>
+- https://d3-graph-gallery.com/graph/bubble_color.html I coppied this code directly and modified it
+- VS Code Copilot
+- Griffon Munhall
+- Harrison Lane
 
 # R and GGplot <br>
 img+ words + cite 
