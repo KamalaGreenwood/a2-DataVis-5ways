@@ -7,7 +7,8 @@ This was the goal that I was attempting to recreate in different tools/libraries
 # Python with Matplotlib:<br>
 ![matplotLib](img/pythonPlt.png)<br>
 This was fairly easy for a library, although knowing pyhton or having experience definitely helps. I really struggled to get legends to work. Having two seperate legends required a handler. Also I fought with placment of the legends for a long time. I wanted them to be on the right and outside of the graph which seemed doable with "outer upper right" but there were two placement methods and the one that worked with my code did not allow for "outer". I also had to offset the second legend so they were readable. 
-I set the size of the dots to be 1.1^(bill_length_mm) which made the change in size more distinct wile still being readable. For some reason this made the legends a bit weird where the Species legend ended up having diffent sized dots. I don't know what exactly the size is based on but I would assume it was the average size per species. Annoyingly the size legend didn't actually show that much of a difference. This is why I used exponential in the data drawing portion, but I was unable to appy that change to the legend. I think this is the most accurate except for my legend issues.<br>
+I set the size of the dots to be 1.1^(bill_length_mm) which made the change in size more distinct wile still being readable. For some reason this made the legends a bit weird where the Species legend ended up having diffent sized dots<sub>1</sub>. I don't know what exactly the size is based on but I would assume it was the average size per species. Annoyingly the size legend didn't actually show that much of a difference. This is why I used exponential in the data drawing portion, but I was unable to appy that change to the legend. I think this is the most accurate so far except for my legend issues.<br>
+1. I later changed it to size = 2*(bill_length_mm) which fixed the legend
 Credit to<br>
 -Benjamin Greenwood<br>
 -VS Code Copilot<br>
@@ -34,14 +35,21 @@ Credit to:<br>
 
 # R and GGplot <br>
 ![R with GGplot2](img/Rplot.png)<br>
-R plot is love R plot is life. Very simple and easy. Except for some reason in rStudio the Run button only runs one line instead of the file. Also my directory is filled with a bunch of R related files that I don't know what to do with and that seems anoying such as ".RData", ".Rhistory", another ".Rhistory", and ".Rproj.user". It may not be as flecible as D3 but I did not explore enough to confirm or deny that.
+R plot is love R plot is life. Very simple and easy. Except for some reason in rStudio the Run button only runs one line instead of the file. Also my directory is filled with a bunch of R related files that I don't know what to do with and that seems anoying such as ".RData", ".Rhistory", another ".Rhistory", and ".Rproj.user". It may not be as flexible as D3 but I did not explore enough to confirm or deny that.
 Thank you so much: <br>
 - https://www.geeksforgeeks.org/r-language/data-visualization-with-r-and-ggplot2/
 - R documentation in general that was so convenient
 
 ## Technical Achievements
-- **Proved P=NP**: Using a combination of...
-- **Solved AI Forever**: ...
+- Created something in D3 that I am somewhat proud of
+- Made fairly good recreations of the plot
+- Got better at python and matplot
+- Got more comfortable with the git workflow
+- Managed time better in schedualing office hours
+- Learned so much new syntac
+- Used copilot to code for the first time
 
 ### Design Achievements
-- **Re-vamped Apple's Design Philosophy**: As demonstrated in my colorscheme...
+- Displayed required elements such as size and color in every plot
+- Displayed non-required elements such as gridlines and legends in all plots. (Minus the legend in D3 due to dime constraints)
+- Found multiple ways to manipulate size wheather just size = bill_length_mm or to multiply by a constant, or to raise the variable to a constant exponent

@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("../penglings.csv")
+data = pd.read_csv("Kamala's_files/penglings.csv")
 penguin_size = data.bill_length_mm
 data = data.drop(columns = ["island", "sex", "year", "bill_depth_mm"])
 data = data.dropna()
@@ -19,7 +19,7 @@ for species in colorMap:
     ax.scatter(
         x=subset["flipper_length_mm"],
         y=subset["body_mass_g"],
-        s=(1.1**(subset["bill_length_mm"])),
+        s=(2*(subset["bill_length_mm"])),
         c=colorMap[species],
         label=species
     )
@@ -45,4 +45,4 @@ ax.legend(
     loc="upper left",
     bbox_to_anchor=(0.25, 1)
 )
-plt.savefig("../img/pythonPlt.png",dpi=200)
+plt.savefig("img/pythonPlt.png",dpi=200)
