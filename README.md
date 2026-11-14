@@ -8,7 +8,7 @@ This was the goal that I was attempting to recreate in different tools/libraries
 ![matplotLib](img/pythonPlt.png)<br>
 This was fairly easy for a library, although knowing pyhton or having experience definitely helps. I really struggled to get legends to work. Having two seperate legends required a handler. Also I fought with placment of the legends for a long time. I wanted them to be on the right and outside of the graph which seemed doable with "outer upper right" but there were two placement methods and the one that worked with my code did not allow for "outer". I also had to offset the second legend so they were readable. 
 I set the size of the dots to be 1.1^(bill_length_mm) which made the change in size more distinct wile still being readable. For some reason this made the legends a bit weird where the Species legend ended up having diffent sized dots<sub>1</sub>. I don't know what exactly the size is based on but I would assume it was the average size per species. Annoyingly the size legend didn't actually show that much of a difference. This is why I used exponential in the data drawing portion, but I was unable to appy that change to the legend. I think this is the most accurate so far except for my legend issues.<br>
-1. I later changed it to size = 2*(bill_length_mm) which fixed the legend
+1. I later changed it to size = 2*(bill_length_mm) which fixed the legend <br>
 Credit to<br>
 -Benjamin Greenwood<br>
 -VS Code Copilot<br>
@@ -17,7 +17,7 @@ Credit to<br>
 # Tableau:<br>
 ![Tableau_2ndVersion](img/Tableau_update.png)<br>
 This was extremely easy. In total took me maybe 15 minutes. At first I found tableau public desktop to be a bit confulsing, but quickly learned that it worked by dragging data attributes onto graph attributes. For example dragging Species onto the color icon to get points to be colored by species. This was amazing and I would love to use it again in the future. Intrestingly I notices that there were more "bill_length_mm" than in the example and I do not know why exactly, but I think the overal outcome is the same.<br>
-Version 2: I changed the colors and messed around with size to make the scaling more noticable. I had used "Edit in Shef" then 2*[Bill_length_mm] but then the legend was only showing the multiplied version, so I undid that. 
+Version 2: I changed the colors and messed around with size to make the scaling more noticable. I had used "Edit in Shelf" then 2*[Bill_length_mm] but then the legend was only showing the multiplied version, so I undid that. 
 
 # Fourish:<br>
 ![Flourish](img/Flourish_penguin2.png)<br>
